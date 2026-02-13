@@ -1,3 +1,21 @@
+// Mobile Menu Toggle *****
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenuDropdown = document.getElementById('mobile-menu-dropdown');
+
+mobileMenuBtn.addEventListener('click', function() {
+    mobileMenuDropdown.classList.toggle('hidden');
+    mobileMenuBtn.classList.toggle('active');
+});
+
+// Close mobile menu when a menu item is clicked
+const mobileMenuItems = mobileMenuDropdown.querySelectorAll('li');
+mobileMenuItems.forEach(item => {
+    item.addEventListener('click', function() {
+        mobileMenuDropdown.classList.add('hidden');
+        mobileMenuBtn.classList.remove('active');
+    });
+});
+
 // but tickets to scroll main section*******
 function buyTicket(){
     window.scrollBy(0,1990);
